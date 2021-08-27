@@ -1,23 +1,12 @@
-import express,{Request,Response} from 'express';
-
+import express from 'express';
+import mainRoutes from './routes/index';
+import painelRoutes from './routes/painel'
 const server = express();
 
-server.get('/',(req:Request,res:Response)=>{
-  res.send("Olá Mundo")
-});
+server.use(mainRoutes);
 
-server.get('/noticia/:slug',(req:Request,res:Response)=>{
-  const {slug} = req.params;
-  
-  res.send(`Noticia: ${slug}`);
-});
-
-server.get('/voo/:origem-/:destino',(req:Request,res:Response)=>{
-  const {origem,destino} = req.params;
-
-  res.send(`A origem é ${origem.toUpperCase()} e destino ${destino.toUpperCase()}`);
-});
-
+//esse primeiro parametro do .use é um prefixo para distinguir de onde vem a rota, arquivos de rotas diferentes não podem ter o mesmo prefixo
+server.use('/painel',painelRoutes);
 
 server.listen(3000,()=>console.log('Server Started'));
 
