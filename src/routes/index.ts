@@ -14,7 +14,7 @@ router.get('/',(req:Request,res:Response)=>{
     showOld = true;
   }
 
-  res.render('home',{
+  res.render('pages/home',{
     name: 'Ana', 
     lastName: 'Sousa',
     showWelcome:true,
@@ -25,19 +25,17 @@ router.get('/',(req:Request,res:Response)=>{
       {title:'Produto y',price:50},
       {title:'Produto z',price:20}
     ],
-    frasesDoDia:[
-      
-    ]
+    frasesDoDia:[]
   
   });
 });
 
 router.get('/contato',(req:Request,res:Response)=>{
-  res.send(`Formulario de Contato`);
+  res.render('pages/contato');
 });
 
 router.get('/sobre',(req:Request,res:Response)=>{
-  res.send("Página institucional sobre a empresa");
+  res.render('pages/sobre');
 });
 
 export default router;

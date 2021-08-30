@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-</head>
-<body>
-  <h1>Titulo</h1>
-  <hr>
+{{>partials/header}}
 
   {{#showWelcome}}
     opa {{name}} {{lastName}}, você já tem {{user.age}}?
@@ -29,7 +19,7 @@
   <!-- objeto -->
   <ul>
     {{#products}}
-      <li>{{title}} - R$ {{price}}</li>
+     {{>partials/productItem}}
     {{/products}}
   </ul>
 
@@ -45,5 +35,5 @@
     {{/frasesDoDia}}
   </ul>
 
-</body>
-</html>
+
+{{>partials/footer}}
