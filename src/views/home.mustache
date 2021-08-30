@@ -10,6 +10,12 @@
   <h1>Titulo</h1>
   <hr>
 
-  opa tudo bem ooookkkkk
+  {{#showWelcome}}
+    opa {{name}} {{lastName}}, você já tem {{user.age}}?
+  {{/showWelcome}}
+  
+  {{#showOld}}
+    Como vai a vida?
+  {{/showOld}}
 </body>
 </html>
