@@ -14,7 +14,23 @@ router.get('/',(req:Request,res:Response)=>{
     showOld = true;
   }
 
-  res.render('home',{name: 'Ana', lastName: 'Sousa',showWelcome:true,user,showOld});
+  res.render('home',{
+    name: 'Ana', 
+    lastName: 'Sousa',
+    showWelcome:true,
+    user,
+    showOld,
+    products:[
+      {title:'Produto x',price:10},
+      {title:'Produto y',price:50},
+      {title:'Produto z',price:20}
+    ],
+    frasesDoDia:[
+      'Alguma coisa',
+      'Outra coisa',
+    ]
+  
+  });
 });
 
 router.get('/contato',(req:Request,res:Response)=>{
