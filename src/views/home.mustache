@@ -17,6 +17,9 @@
   {{#showOld}}
     Como vai a vida?
   {{/showOld}}
+  {{^showOld}}
+    Beleza!
+  {{/showOld}}
 
 
   <hr>
@@ -37,6 +40,10 @@
     {{#frasesDoDia}}
       <li>{{.}}</li>
     {{/frasesDoDia}}
+    {{^frasesDoDia}}
+      <p>Não há frases motivacionais hoje</p>
+    {{/frasesDoDia}}
   </ul>
+
 </body>
 </html>

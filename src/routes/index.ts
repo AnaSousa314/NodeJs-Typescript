@@ -5,7 +5,7 @@ const router = Router();
 router.get('/',(req:Request,res:Response)=>{
   let user = {
     name: 'Ana',
-    age: 90
+    age: 15
   };
   let showOld:boolean = false;
 
@@ -26,8 +26,7 @@ router.get('/',(req:Request,res:Response)=>{
       {title:'Produto z',price:20}
     ],
     frasesDoDia:[
-      'Alguma coisa',
-      'Outra coisa',
+      
     ]
   
   });
