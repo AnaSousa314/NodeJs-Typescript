@@ -13,6 +13,10 @@ server.engine('mustache',mustache());
 
 server.use(express.static(path.join(__dirname,'../public')));
 
+//habilita a captura de dados dentro da rota,ou seja,ao body, extend true para que ele de os dados detalhados
+server.use(express.urlencoded({extended:true}));
+
+
 server.use(mainRoutes);
 
 
