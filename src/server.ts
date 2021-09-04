@@ -1,9 +1,12 @@
 import express, {Response,Request} from 'express';
 import path from 'path';
-
+import dotenv from 'dotenv'
 import mustache from 'mustache-express';
 
 import mainRoutes from './routes/index';
+
+dotenv.config();
+
 
 const server = express();
 
@@ -25,7 +28,7 @@ server.use((req:Request,res:Response)=>{
   res.status(404).send('Página não encontrada')
 })
 
-server.listen(3000,()=>console.log('Server Started'));
+server.listen(process.env.PORT,()=>console.log('Server Started'));
 
 
 //se colocarmos na porta 80 só precisaremos digitar no navegador "localhost" 
