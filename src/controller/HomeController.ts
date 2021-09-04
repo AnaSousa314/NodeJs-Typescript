@@ -1,4 +1,5 @@
-import {Response,Request} from 'express'
+import {Response,Request} from 'express';
+import {Product } from '../models/Product'
 
 
 export const home = (req:Request,res:Response)=>{
@@ -13,18 +14,18 @@ export const home = (req:Request,res:Response)=>{
     showOld = true;
   }
 
+  let list = Product.getAll();
+  let expensiveList = Product.getFromPriceAfter(12);
+
   res.render('pages/home',{
     name: 'Ana', 
     lastName: 'Sousa',
     showWelcome:true,
     user,
     showOld,
-    products:[
-      {title:'Produto x',price:10},
-      {title:'Produto y',price:50},
-      {title:'Produto z',price:20}
-    ],
-    frasesDoDia:[]
+    frasesDoDia:[],
+    products: list,
+    expensives: expensiveList
   
   });
 }

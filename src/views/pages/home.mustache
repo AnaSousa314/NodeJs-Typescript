@@ -25,6 +25,15 @@
 
   <hr>
 
+  <h2>Produtos a partir de R$ 12,00</h2>
+  <ul>
+    {{#expensives}}
+     {{>partials/productItem}}
+    {{/expensives}}
+  </ul>
+
+  <hr>
+
   <!-- para lista simples, colocamos um ponto -->
   <ul>
     {{#frasesDoDia}}
@@ -34,6 +43,7 @@
       <p>Não há frases motivacionais hoje</p>
     {{/frasesDoDia}}
   </ul>
+
 
 
 {{>partials/footer}}
